@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	/*text-align: left;*/
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #000;	
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 0.75em;
+	color:#000;
+}
+
+.container {
+	/** BLUEPRINT CSS **/
+}
+
+.wrap {
+}
+
+#main {
+	min-height: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #000;
+	padding-bottom: 30px;
+}
+
+.top{
+	height: 10px;
+	background-color: #000;
+	/*border: 1px solid green;*/
+}
+
+.header {
+	height: 150px;
+	background-image: url("../images/spejder_top_01.jpg");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-color: #000;
+}
+
+.breadcrumb {
+	height: 10px;
+	background-color: #000;
+}
+
+.main_content {
+	/**/border: 1px solid blue;/**/
+	padding-bottom: 30px;
+	height: 100%;
+	min-height: 100%;
+	float: left;
+}
+
+.navigation_div {
+/*	border: 1px solid yellow;*/
+	float: left;
+	font-size: 1em;
+}
+
+.navigation {
+	/** AUTO GENERATED CONTENT **/
+}
+
+.content {
+border: 1px solid blue;
+}
+
+.content_right {
+border: 1px solid blue;
+	
+}
+
+.footer {
+	background-color: #000;
+	color: #FFF;
+	padding-bottom: 3px;
+	text-align: center;	
+	margin-top: -145px;
+	height: 145px;
+	/**clear: both;**/
+	background-image: url("../images/logo_black.png");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+			
+}

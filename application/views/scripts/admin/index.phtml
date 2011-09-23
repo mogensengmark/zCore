@@ -1,0 +1,14 @@
+<?php if (Zend_Auth::getInstance()->hasIdentity()): ?>
+Dette er admin/index
+<br /> 
+<?php
+	//echo Zend_Auth::getInstance()->getIdentity()->userId;
+	Zend_Debug::dump(Zend_Auth::getInstance()->getIdentity());
+	
+	echo "user: " . Zend_Auth::getInstance()->getIdentity()->userName . "<br />";
+	
+?>
+
+<?php endif; ?>
+
+

@@ -1,0 +1,93 @@
+@import url("menu.css");
+@import url("blogs.css");
+@import url("pages.css");
+@charset "utf-8";
+
+body
+{
+	background: #000;	
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 0.75em;
+	color:#000;
+}
+
+.container
+{
+	/** BLUEPRINT CSS **/
+}
+
+#wrap
+{
+	margin: 0px auto;
+	width: 950px;
+	background: #fff;
+}
+
+.top
+{
+	height: 10px;
+	background: #000;
+}
+
+.header
+{
+	height: 200px;
+	/**/background-image: url("../images/IMG_4858_200.jpg");/**/
+	/**background-image: url("../images/DSC_0446_200.jpg");/**/
+	/**background-image: url("../images/DSC_0927_200.jpg");/**/
+	background-position: top;
+	background-repeat: no-repeat;
+}
+
+.breadcrumb
+{
+	height: 10px;		
+	background: #000;
+}
+
+#main
+{
+	height: 100%;
+	min-height: 100%;
+	/** CHANGE FOOTER HEIGHT HERE **/
+	padding-bottom: 90px;
+}
+
+#content
+{
+	/**border-left: 1px solid #00d;/**/
+}
+
+
+#footer
+{
+    /** SCOUT LOGO **/
+ 	background-image: url("../images/logo_outline.png");
+	background-position: top center;
+	background-repeat: no-repeat;
+
+	/** CHANGE FOOTER HEIGHT HERE **/
+	padding-top: 20px;
+   	/** CHANGE FOOTER HEIGHT HERE **/
+    height: 70px;
+   	/** CHANGE FOOTER HEIGHT HERE **/
+    margin-top: -90px;
+	}
+
+.footer
+{
+	/** HERLUFMAGLE GROUP TEXT**/
+	background: #000;
+	text-align: center;
+	color: #fff;
+	
+	/**
+	 * @todo: vertical align text
+	 */
+	
+   	/** CHANGE FOOTER HEIGHT HERE **/
+	/** USE MARGIN NOT PADDING - MOVES DIV 40PIXELS DOWN **/
+	margin-top: 40px;
+	height: 30px; 
+	
+}

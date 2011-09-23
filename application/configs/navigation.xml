@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+    <nav>
+        <home>
+        	<label>Forsiden</label>
+   			<controller>index</controller>
+   			<action>index</action>
+    	</home>
+    	<about>
+    		<label>Om os</label>
+    		<controller>index</controller>
+    		<action>about</action>
+    	</about>
+    	<contact>
+    		<label>Kontakt</label>
+    		<controller>index</controller>
+    		<action>contact</action>
+    	</contact>
+    </nav>
+</configdata>

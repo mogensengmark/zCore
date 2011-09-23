@@ -1,0 +1,47 @@
+.blog_list_item
+{	
+	/**border: 1px dashed #066;/**/
+	
+}
+
+.blog_list_item_header
+{
+	height: 55px;
+	color: #066;
+	margin-bottom: 5px; 
+}
+
+.blog_list_item_logo 
+{
+	height: 100%;
+	text-align: center;
+}
+
+.blog_list_item_logo img
+{
+	position: center;
+	height: 50px;
+	width: auto;
+}
+
+.blog_list_item_header_text
+{
+	height: 100%;
+	padding-top: 8px;
+}
+
+.blog_list_item_content
+{
+	border-top: 1px dashed #003333;
+	border-bottom: 1px dashed #003333;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+
+.blog_list_item_footer
+{
+	padding-top: 7px;
+	height: 25px;
+	text-align: right;
+}

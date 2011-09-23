@@ -1,0 +1,25 @@
+<?php
+
+	Zend_Debug::dump($this->layout()->entries);
+	
+	foreach($this->layout()->entries as $entry)
+	{
+?>
+	<div id="blog_id_<?php echo $entry['id'] ?>" class="blog_list_item span-20 last">
+		<div class="blog_list_item_header" >
+			<div class="blog_list_item_logo span-3"><img src="../../images/unit_logos/<?php echo $entry['logo']; ?>" /></div>
+			<div class="blog_list_item_header_text"><h2><?php echo $entry['title']; ?></h2></div>
+		</div>
+		<div class="blog_list_item_content"><?php echo $entry['text'] ?></div>
+		<div class="blog_list_item_footer">
+			<div class="blog_list_item_author"><?php echo $entry['author']; ?></div>
+		</div>
+	</div>
+	<br />
+	<br />
+	<hr style="border 1px solid red"/>
+<?php 		
+	}
+	
+	
+?>

@@ -1,0 +1,30 @@
+/**
+ * CSS FOR STYLING MENU
+ */
+.menu 
+{
+	background-color: #000;
+	height: 26px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.menu a:active,
+.menu a:link,
+.menu a:visited	
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu a:hover
+{
+	text-decoration: underline;		
+}
+
+.menu li 
+{
+	list-style-type: none;
+	display: inline;
+	padding-right: 20px;
+}

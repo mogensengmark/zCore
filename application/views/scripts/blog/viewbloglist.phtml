@@ -1,0 +1,38 @@
+<?php
+	//Zend_Debug::dump($this->layout()->entries);
+	
+
+?>
+<br />
+<h3>Vælg en blog at rette eller skjule</h3>
+<table>
+	<th>Kategori</th>
+	<th>Titel</th>
+	<th>Tekst</th>
+	<th width="120">Forfatter</th>
+	<th width="80">Dato</th>
+	<th width="50">Ret/Skjul</th>
+	
+<?php 
+	foreach($this->layout()->entries as $entry)	{
+		echo "<tr>\n";
+		echo "<td>" . $entry['category_name'] . "</td>\n";
+		echo "<td>" . $entry['title'] . "</td>\n";
+		echo "<td>" . $entry['text'] . "</td>\n";
+		echo "<td>" . $entry['author'] . "</td>\n";
+		echo "<td>" . $entry['post_date'] . "</td>\n";
+
+		// Generates form for posting edit options
+?>
+	<td>
+		<form action="<?php echo $this->url(array('controller' => 'blog', 'action' => 'editblog'), 'default', true)?>" method="post">
+			<input type="hidden" name="blogID" value="<?php echo $entry['id']; ?>" />
+			<input type="submit" name="editBlog" value="Ret" />
+			<input type="submit" name="disableBlog" value="Skjul" />
+		</form>
+	</td>
+<?php 
+		echo "</tr>";
+	}
+?>	
+</table>

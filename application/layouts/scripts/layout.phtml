@@ -1,0 +1,77 @@
+<!-- application/layouts/scripts/layout.phtml -->
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>topspejder.dk</title>
+  <?php 
+  	// Stylesheets
+    $this->headLink()->appendStylesheet('/css/screen.css', 'screen, projection');
+	$this->headLink()->appendStylesheet('/css/ie.css', 'screen, projection', 'IE');
+	$this->headLink()->appendStylesheet('/css/print.css', 'print');
+    $this->headLink()->appendStylesheet('/css/sticky_footer.css');
+	$this->headLink()->appendStylesheet('/css/design.css');
+	//$this->headLink()->appendStylesheet('/css/topspejder_main.css');
+	// Javascripts
+    $this->headScript()->appendFile('/ckeditor/ckeditor.js');
+  ?>
+	<script type="text/javascript"> 
+    window.onload = function()
+    {
+        //CKEDITOR.replace('Full');
+        CKEDITOR.replace('pageContent',
+                {
+            		toolbar: 'Minimum'
+                });
+    };
+</script>
+  <?php
+    echo $this->headlink();
+    echo $this->headScript();
+    
+    
+  ?>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
+</head>
+<body>
+	<div id="wrap">
+		<div id="main" class="container">
+			<div id="top" class="top span-24 last"></div>
+			<div id="header" class="header span-24 last"></div>
+			<div id="breadcrumb" class="breadcrumb span-24 last"></div>
+			<div id="menu" class="menu span-24 last">
+				<?php echo $this->navigation()->menu(); ?>
+			</div>
+			
+  			<?php 
+				// CHECK IF WE ARE TO DISPLAY RIGHT COLUMN
+				if(!empty($this->layout()->display_right)) 
+				{
+					echo "display right";
+			?>			
+			<div id="content" class="content span-20 last">
+				<?php echo $this->layout()->content; ?>
+			</div>
+			<div id="content_right" class="content_right span-4 last">
+				<?php echo $this->layout()->content_right; ?>
+			</div>			
+			<?php 
+				} else {
+			?>
+			<div id="content" class="content span-24 last">
+				<?php echo $this->layout()->content; ?>
+			</div>
+			<?php 
+				}
+			?>
+		</div>
+	</div>
+	<div id="footer" class="container">
+		<div id="footer_item" class="footer span-24 last">KFUM-Spejderne, Herlufmagle Gruppe, Sletskovvej 5, 4160 Herlufmagle</div>
+	</div>
+</body>
+</html>

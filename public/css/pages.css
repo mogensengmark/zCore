@@ -1,0 +1,53 @@
+/**
+ * CSS FOR STYLING GENERAL CONTENT PAGES
+ */
+.page
+{
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 10px;
+}
+
+.headline
+{
+	width: 100%;
+}
+
+.lefted
+{
+	text-align: left; 
+}
+
+.centered
+{
+	text-align: center;
+}
+ 
+.righted
+{
+	text-align: right;
+}
+
+.author_tag
+{
+	width: 100%;
+	text-align: right;
+}
+
+.topped
+{
+	vertical-align: top;
+}
+
+.topped img
+{
+	border: 1px solid black;
+}
+
+#video
+{
+	width: 420px;
+	float: right;
+	border: 1px solid black;
+	clear: both;
+}

@@ -1,0 +1,1 @@
+[Thu Apr 28 01:16:21 2011] [alert] [client 83.93.158.71] /var/www/topspejder.dk/public_html/.htaccess: RewriteBase takes one argument, the base URL of the per-directory context

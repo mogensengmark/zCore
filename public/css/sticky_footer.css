@@ -1,0 +1,77 @@
+/**
+ * STICKY FOOTER 
+ **/
+
+* 
+{
+	margin:0;
+	padding:0;
+} 
+
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html, body, #wrap
+{
+	height: 100%;
+}
+
+body > #wrap
+{
+	height: auto;
+	min-height: 100%;
+}
+
+#wrap
+{
+	/*border: 2px solid green;*/
+}
+
+#main
+{
+	/*overflow:auto;*/
+	/** CHANGE FOOTER HEIGHT HERE **/
+	padding-bottom: 70px;
+}  /* must be same height as the footer */
+
+#footer 
+{
+	position: relative;
+	/** CHANGE FOOTER HEIGHT HERE **/
+	margin-top: -60px; /* negative value of footer height */
+	/** CHANGE FOOTER HEIGHT HERE **/
+	height: 60px;
+	
+	clear:both;
+} 
+
+/*Opera Fix*/
+body:before 
+{/* thanks to Maleika (Kohoutec)*/
+	content:"";
+	height:100%;
+	/*float:left;*/
+	width:0;
+	margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
+/* CLEAR FIX*/
+.clearfix:after 
+{
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix 
+{
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
