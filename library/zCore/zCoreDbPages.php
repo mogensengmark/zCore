@@ -64,9 +64,9 @@ class zCoreDbPages extends zCoreDB {
 	public function insertPageContent($pageContent, $pageId)
 	{
 		// Table
-		$this->_table = 'pageContent';
+		$this->_table = 'pagecontent';
 		// Data
-		$this->_data['pageContent'] = $pageContent;
+		$this->_data['pageContent'] = mysql_escape_string($pageContent);
 		$this->_data['fk_pageId'] = $pageId;
 		
 		// Executes query
