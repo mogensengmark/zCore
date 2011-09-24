@@ -66,7 +66,7 @@ class zCoreDbPages extends zCoreDB {
 		// Table
 		$this->_table = 'pagecontent';
 		// Data
-		$this->_data['pageContent'] = mysql_escape_string($pageContent);
+		$this->_data['pageContent'] = $pageContent;
 		$this->_data['fk_pageId'] = $pageId;
 		
 		// Executes query
@@ -75,7 +75,28 @@ class zCoreDbPages extends zCoreDB {
 	}
 	
 	
-	
+	public function getPageContent($pageId) 
+	{
+		// SQL statement		
+		$this->_sql = "
+			SELECT
+				pagecontent.pageContent,
+				pagecontent.pageInserted
+			FROM
+				pagecontent
+			WHERE
+				pagecontent.fk_pageId = ?
+			ORDER BY
+				pagecontent.pageInserted
+			DESC
+			LIMIT 1";
+		
+		// Parameters
+		$this->_params[] = $pageId;
+		
+		// Executes query
+		return $this->fetchRow();
+	}
 	
 	
 }
