@@ -5,8 +5,8 @@ require_once 'zCore/zCoreDB.php';
 class zCoreDbPages extends zCoreDB {
 	
 	/**
-	 * 
 	 * Gets list of page Types, ordered alphabetical
+	 * 
 	 * @param unknown_type $params
 	 */
 	public function getPageTypes()
@@ -24,6 +24,16 @@ class zCoreDbPages extends zCoreDB {
 		return $this->fetchAll();
 	}
 	
+	/**
+	 * Inserts page data into database.
+	 * Please notice, that "page" is only a container for page content.
+	 * Regular content is specified by pageType.
+	 * 
+	 * @param unknown_type $pageName
+	 * @param unknown_type $organisationId
+	 * @param unknown_type $pageType
+	 * @param unknown_type $state
+	 */
 	public function createPage($pageName, $organisationId, $pageType, $state = null)
 	{
 		// Table
@@ -40,6 +50,12 @@ class zCoreDbPages extends zCoreDB {
 		return $this->insertRow();
 	}
 	
+	
+	/**
+	 * Retrieve list of pages for a given organisation, ordered alphabeticaly by pageName
+	 * 
+	 * @param unknown_type $organisationId
+	 */
 	public function getPageList($organisationId)
 	{
 		$this->_sql = "
@@ -75,6 +91,12 @@ class zCoreDbPages extends zCoreDB {
 	}
 	
 	
+	/**
+	 * Retrieves pageContent for a given page.
+	 * Please note, that this function retrieves the last pageContent inserted
+	 * 
+	 * @param unknown_type $pageId
+	 */
 	public function getPageContent($pageId) 
 	{
 		// SQL statement		
