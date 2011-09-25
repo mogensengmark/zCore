@@ -76,10 +76,39 @@ class PageController extends Zend_Controller_Action {
 				// Loads form values
 				$values = $form->getValues();
 				
-				$result = $db->insertPageContent($values['pageContent'], $values['pageId']);
+				$result = $db->insertPageContent(mysql_real_escape_string($values['pageContent']), $values['pageId']);
             } 
         }
     }
+    
+    public function showpageAction()
+    {
+    	// Default page ID
+    	$pid = 2;
+		// Gets Helper instance
+  		$helper = new zCoreHelper();
+
+  		/**
+  		// Gets database Instance
+		$db = new zCoreDbPages();
+    	
+    	$pageData = $db->getPageContent($pid);
+    	
+    	//$this->view->pageContent = html_entity_decode($pageData['pageContent']);
+    	$this->view->pageContent = html_entity_decode($pageData['pageContent']);
+    	$this->view->pageInserted = $pageData['pageInserted'];
+    	
+    	
+    	//Zend_Debug::dump($pageContent);
+    	**/
+  		
+  		$pageModel = new Model_Mapper_Pages();
+  		$pageModel->getPageData($pid);
+  		
+  		Zend_Debug::dump($pageModel);
+    	
+    }
+    
 }
 
 ?>
