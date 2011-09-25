@@ -88,10 +88,10 @@ class PageController extends Zend_Controller_Action {
 		// Gets Helper instance
   		$helper = new zCoreHelper();
 
-  		/**
+  		/**/
   		// Gets database Instance
 		$db = new zCoreDbPages();
-    	
+    	/**
     	$pageData = $db->getPageContent($pid);
     	
     	//$this->view->pageContent = html_entity_decode($pageData['pageContent']);
@@ -102,7 +102,7 @@ class PageController extends Zend_Controller_Action {
     	//Zend_Debug::dump($pageContent);
     	**/
   		
-  		$pageModel = new Model_Mapper_Pages();
+  		$pageModel = new Application_Model_Mapper_Pages();
   		$pageModel->getPageData($pid);
   		
   		Zend_Debug::dump($pageModel);
