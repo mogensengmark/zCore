@@ -5,7 +5,7 @@
  * @author Mogens Engmark
  *
  */
-class Model_Pages
+class Application_Model_Pages
 {
 	// Variables
 	private $_pageId;
