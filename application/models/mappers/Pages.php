@@ -12,6 +12,7 @@ class Application_Model_Mapper_Pages
 	
 	function __construct() {
 		$this->_db = Zend_Registry::get('db');
+		//$this->_db = Zend_Registry::getDefaultAdapter();
 	}
 	
 	
@@ -24,19 +25,25 @@ class Application_Model_Mapper_Pages
 				pagetypes.pageType
 			FROM
 				pages
-			INNER JOIN pageTypes ON (pages.fk_pageTypeId = pageTypes.pageTypeId)
+			INNER JOIN pagetypes ON (pages.fk_pageTypeId = pagetypes.pageTypeId)
 			WHERE
 				pages.pageId = ?";
 		
+//		Zend_Debug::dump($this->_db);
+		
+		
 		// Preparing and executing statement
 		$statement = $this->_db->prepare($sql);
-		$statement->execute($pageId);
+		$statement->execute(array($pageId));
+		
+		$result = $statement->fetch();
+		
+		Zend_Debug::dump($result);
 		
 		// Handling result
-		$result = $statement->fetchOne();
 		
 		// Loading Pages model
-		$pageModel = new Model_Pages();
+		$pageModel = new Application_Model_Pages();
 		// Assigning data
 		$pageModel->setPageId($result['pageId']);
 		$pageModel->setPageName($result['pageName']);
