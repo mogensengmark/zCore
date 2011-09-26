@@ -8,50 +8,50 @@
 class Application_Model_Pages
 {
 	// Variables
-	private $_pageId;
-	private $_pageName;
-	private $_organisationId;
-	private $_pageState;
-	private $_pageType;
+	public $pageId;
+	public $pageName;
+	public $organisationId;
+	public $pageState;
+	public $pageType;
 	
 	function getPageId() {
-		return $this->_pageId;
+		return $this->pageId;
 	}
 	
 	function setPageId($pageId) {
-		$this->_pageId = $pageId;
+		$this->pageId = $pageId;
 	}
 	
 	function getPageName() {
-		return $this->_pageName;
+		return $this->pageName;
 	}
 
 	function setPageName($name) {
-		$this->_pageName = $name;
+		$this->pageName = $name;
 	}
 	
 	function getOrganisationId() {
-		return $this->_organisationId;
+		return $this->organisationId;
 	}
 
 	function setOrganisationId($organisationId) {
-		$this->_organisationId = $organisationId;
+		$this->organisationId = $organisationId;
 	}
 	
 	function getPageState() {
-		return $this->_pageState;
+		return $this->pageState;
 	}
 	
 	function setPageState($pageState) {
-		$this->_pageState = $pageState;
+		$this->pageState = $pageState;
 	}
 	
 	function getPageType() {
-		return $this->_pageType;
+		return $this->pageType;
 	}
 	
 	function setPageType($pageType) {
-		$this->_pageType = $pageType;
+		$this->pageType = $pageType;
 	}
 }
 
