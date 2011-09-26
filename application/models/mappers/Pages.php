@@ -36,11 +36,8 @@ class Application_Model_Mapper_Pages
 		$statement = $this->_db->prepare($sql);
 		$statement->execute(array($pageId));
 		
+		// Pulls result
 		$result = $statement->fetch();
-		
-		Zend_Debug::dump($result);
-		
-		// Handling result
 		
 		// Loading Pages model
 		$pageModel = new Application_Model_Pages();
@@ -64,7 +61,7 @@ class Application_Model_Mapper_Pages
 				pagetypes.pageType
 			FROM
 				pages
-			INNER JOIN pageTypes ON (pages.fk_pageTypeId = pageTypes.pageTypeId)
+			INNER JOIN pagetypes ON (pages.fk_pageTypeId = pagetypes.pageTypeId)
 			WHERE
 				pages.fk_organisationID = ?
 			ORDER BY
