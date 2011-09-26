@@ -90,10 +90,11 @@ class PageController extends Zend_Controller_Action {
   		
   		// Loading data Model
   		$pageModel = new Application_Model_Mapper_Pages();
-  		$pageModel->getPageData($pid);
+  		// Get data from model
+  		$data = $pageModel->getPageData($pid);
+  		// Assigning data
+  		$this->view->pageName = $data->pageName;
   		
-  		Zend_Debug::dump($pageModel);
-    	
     }
     
 }
