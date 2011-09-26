@@ -87,21 +87,8 @@ class PageController extends Zend_Controller_Action {
     	$pid = 2;
 		// Gets Helper instance
   		$helper = new zCoreHelper();
-
-  		/**/
-  		// Gets database Instance
-		$db = new zCoreDbPages();
-    	/**
-    	$pageData = $db->getPageContent($pid);
-    	
-    	//$this->view->pageContent = html_entity_decode($pageData['pageContent']);
-    	$this->view->pageContent = html_entity_decode($pageData['pageContent']);
-    	$this->view->pageInserted = $pageData['pageInserted'];
-    	
-    	
-    	//Zend_Debug::dump($pageContent);
-    	**/
   		
+  		// Loading data Model
   		$pageModel = new Application_Model_Mapper_Pages();
   		$pageModel->getPageData($pid);
   		
