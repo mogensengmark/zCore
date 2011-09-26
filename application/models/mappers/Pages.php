@@ -47,6 +47,8 @@ class Application_Model_Mapper_Pages
 		$pageModel->setPageState($result['pageState']);
 		$pageModel->setPageType($result['pageType']);
 		
+		//Zend_Debug::dump($pageModel);
+		
 		// Returning data
 		return $pageModel;
 		
