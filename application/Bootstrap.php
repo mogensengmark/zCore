@@ -25,12 +25,20 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->doctype('XHTML11');
 
         $view->headTitle()->setSeparator(' : ');
-        $view->headTitle('topspejder.dk');
-
+        $view->headTitle('zCore');
         $view->headMeta()->appendHttpEquiv('Content-Type',
                                            'text/html; charset=utf-8');
 
         return $view;
+    }
+    
+    
+    protected function _initzCoreDB()
+    {
+    	$this->bootstrap('db');
+    	$db = $this->getResource('db');
+    	
+    	Zend_Registry::set('db', $db);
     }
     
     /**
