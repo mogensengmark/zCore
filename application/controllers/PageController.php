@@ -76,7 +76,7 @@ class PageController extends Zend_Controller_Action {
 				// Loads form values
 				$values = $form->getValues();
 				
-				$result = $db->insertPageContent(mysql_real_escape_string($values['pageContent']), $values['pageId']);
+				$result = $db->insertPageContent(mysql_real_escape_string(nl2br($values['pageContent'])), $values['pageId']);
             } 
         }
     }
@@ -94,7 +94,11 @@ class PageController extends Zend_Controller_Action {
   		$data = $pageModel->getPageData($pid);
   		// Assigning data
   		$this->view->pageName = $data->pageName;
-  		$this->view->pageContent = "hest";
+  		$this->view->pageType = $data->pageType;
+  		$this->view->pageAuthor = $data->pageAuthor;
+  		$this->view->pageUpdated = $data->pageUpdated;
+  		
+  		$this->view->pageContent = $data->pageContent;
   		
   		
   		

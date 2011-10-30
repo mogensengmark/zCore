@@ -13,6 +13,9 @@ class Application_Model_Pages
 	public $organisationId;
 	public $pageState;
 	public $pageType;
+	public $pageContent;
+	public $pageAuthor;
+	public $pageUpdated;
 	
 	function getPageId() {
 		return $this->pageId;
@@ -53,5 +56,30 @@ class Application_Model_Pages
 	function setPageType($pageType) {
 		$this->pageType = $pageType;
 	}
+
+	function getPageContent() {
+		return $this->pageContent;
+	}
+	
+	function setPageContent($pageContent) {
+		$this->pageContent = $pageContent;
+	}
+	
+	function getPageAuthor() {
+		return $this->pageAuthor;
+	}
+	
+	function setPageAuthor($pageAuthor) {
+		$this->pageAuthor = $pageAuthor;
+	}
+	
+	function getPageUpdated() {
+		return $this->pageUpdated;
+	}
+	
+	function setPageUpdated($pageUpdated) {
+		$this->pageUpdated = $pageUpdated;
+	}
+	
 }
 
