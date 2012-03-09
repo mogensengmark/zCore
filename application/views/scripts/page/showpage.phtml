@@ -3,9 +3,12 @@
 	echo "type: " . $this->pageType . "<br />";
 	echo "updated: " . $this->pageUpdated . "<br />";
 	echo "author: " . $this->pageAuthor . "<br />";
-	
+
 	//echo $this->pageBasic() . "<br>";
 	echo "content: " . $this->pageContent;
-	
-	
+	echo "testmenu:";
+
+	//Zend_Debug::dump($this->testMenu);
+
+	echo $this->navigation()->menu();
 ?>
