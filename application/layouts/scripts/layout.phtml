@@ -14,17 +14,22 @@
     $this->headLink()->appendStylesheet('/css/sticky_footer.css');
 	$this->headLink()->appendStylesheet('/css/design.css');
 	//jQueryMenu
-	$this->headlink()->appendStylesheet('/jquerymenu/jquery-ui-1.8.6.custom.css');
-	$this->headlink()->appendStylesheet('/jquerymenu/jquery.ui.potato.menu.css');
+	//$this->headlink()->appendStylesheet('/jquerymenu/jquery-ui-1.8.6.custom.css');
+	//$this->headlink()->appendStylesheet('/jquerymenu/jquery.ui.potato.menu.css');
+	$this->headlink()->appendStylesheet('/css/jquery-ui-1.8.6.custom.css');
+	$this->headlink()->appendStylesheet('/css/jquery.ui.potato.menu.css');
 
 	//-------------------------------------
 	// Javascripts
     //-------------------------------------
 	$this->headScript()->appendFile('/ckeditor/ckeditor.js');
     // jQueryMenu
-    $this->headScript()->appendFile('/jquerymenu/jquery-1.4.4.min.js');
-    $this->headScript()->appendFile('/jquerymenu/jquery-ui-1.8.6.custom.min.js');
-    $this->headScript()->appendFile('/jquerymenu/jquery.ui.potato.menu.js');
+    $this->headScript()->appendFile('/js/jquery-1.7.1.min.js');
+    $this->headScript()->appendFile('/js/jquery-ui-1.8.18.custom.min.js');
+    //$this->headScript()->appendFile('/jquerymenu/jquery-1.4.4.min.js');
+    //$this->headScript()->appendFile('/jquerymenu/jquery-ui-1.8.6.custom.min.js');
+    // jQueryMenu
+    $this->headScript()->appendFile('/js/jquery.ui.potato.menu.js');
 
   ?>
 	<script type="text/javascript">
