@@ -1,10 +1,11 @@
 /**
  * CSS FOR STYLING MENU
+ * MORE SPECIFIC STYLING IS LOCATED IN jquery-ui-1.8.6.custom.css
  */
 .menu 
 {
 	background-color: #000;
-	height: 26px;
+	height: 25px;
 	padding: 0px;
 	margin: 0px;
 }
@@ -27,5 +28,13 @@
 	list-style-type: none;
 	display: inline;
 	padding-right: 20px;
+	width: 100px;
 }
 
+.navigation
+{
+	/*margin-bottom: 2px;*/
+	/*padding: 2px;*/
+	/**border: 1px solid yellow;/**/
+	
+}
