@@ -8,28 +8,37 @@
     //-------------------------------------
     // Stylesheets
     //-------------------------------------
-    $this->headLink()->appendStylesheet('/css/screen.css', 'screen, projection');
-	$this->headLink()->appendStylesheet('/css/ie.css', 'screen, projection', 'IE');
-	$this->headLink()->appendStylesheet('/css/print.css', 'print');
+    $this->headLink()->appendStylesheet('/css/screen.css', 'screen, projection');  
+    $this->headLink()->appendStylesheet('/css/ie.css', 'screen, projection', 'IE');
+    $this->headLink()->appendStylesheet('/css/print.css', 'print');
     $this->headLink()->appendStylesheet('/css/sticky_footer.css');
-	$this->headLink()->appendStylesheet('/css/design.css');
-	//jQueryMenu
-	//$this->headlink()->appendStylesheet('/jquerymenu/jquery-ui-1.8.6.custom.css');
-	//$this->headlink()->appendStylesheet('/jquerymenu/jquery.ui.potato.menu.css');
-	$this->headlink()->appendStylesheet('/css/jquery-ui-1.8.6.custom.css');
-	$this->headlink()->appendStylesheet('/css/jquery.ui.potato.menu.css');
+    $this->headLink()->appendStylesheet('/css/menu.css');
+    $this->headLink()->appendStylesheet('/css/design.css');
+    
+    /*
+    $this->headLink()->appendStylesheet('/css/dropdown/dropdown.vertical.css');
+    $this->headLink()->appendStylesheet('/css/dropdown/themes/default/default.css');
+    */
+    
+    
+    
+    //jQueryMenu
+    //$this->headlink()->appendStylesheet('/jquerymenu/jquery-ui-1.8.6.custom.css');
+    //$this->headlink()->appendStylesheet('/jquerymenu/jquery.ui.potato.menu.css');
+    $this->headlink()->appendStylesheet('/css/jquery-ui-1.8.6.custom.css');
+    //$this->headlink()->appendStylesheet('/css/jquery.ui.potato.menu.css');
 
-	//-------------------------------------
-	// Javascripts
     //-------------------------------------
-	$this->headScript()->appendFile('/ckeditor/ckeditor.js');
+    // Javascripts
+    //-------------------------------------
+    $this->headScript()->appendFile('/ckeditor/ckeditor.js');
     // jQueryMenu
     $this->headScript()->appendFile('/js/jquery-1.7.1.min.js');
     $this->headScript()->appendFile('/js/jquery-ui-1.8.18.custom.min.js');
     //$this->headScript()->appendFile('/jquerymenu/jquery-1.4.4.min.js');
     //$this->headScript()->appendFile('/jquerymenu/jquery-ui-1.8.6.custom.min.js');
     // jQueryMenu
-    $this->headScript()->appendFile('/js/jquery.ui.potato.menu.js');
+    //$this->headScript()->appendFile('/js/jquery.ui.potato.menu.js');
 
   ?>
 	<script type="text/javascript">
@@ -46,14 +55,18 @@
     echo $this->headlink();
     echo $this->headScript();
   ?>
-<script>
+
+<script type="text/javascript">
 	// navigation adjustments
+
 	(function($) {
 	 	$(document).ready(function(){
-			$('ul.navigation').buttonset();
-			$('ul.navigation').ptMenu();
+                        //$('#menu').text('hest');
+                        $('#menu ul li:has(ul)').addClass('has-submenu');
+                        alert('hest');
 		});
 	})(jQuery);
+
 </script>
 <!--[if !IE 7]>
 	<style type="text/css">
@@ -66,9 +79,12 @@
 		<div id="main" class="container">
 			<div id="top" class="top span-24 last"></div>
 			<div id="header" class="header span-24 last"></div>
-			<div id="menu" class="menu span-24 last">
-				<?php echo $this->navigation()->menu()->setUlClass('navigation'); ?>
-			</div>
+			<nav id="menu" class="navigation span-24 last"> 
+				<?php 
+                                    //echo $this->navigation()->menu()->setUlClass('cssmenu'); 
+                                    echo $this->navigation()->menu()->setUlClass(''); 
+                                ?>
+			</nav>
 			<?php
 				// CHECK IF WE ARE TO DISPLAY RIGHT COLUMN
 				if(!empty($this->layout()->display_right))
