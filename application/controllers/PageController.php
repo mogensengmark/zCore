@@ -5,10 +5,10 @@ require_once 'zCore/zCoreDbPages.php';
 
 class PageController extends Zend_Controller_Action {
 
-	// Default option for forms.
-	private $options = '';
+    // Default option for forms.
+    private $options = '';
 
-	public function createpageAction()
+    public function createpageAction()
     {
     	// Generates form
     	$form = new Default_Form_pageForm($this->options);
@@ -19,29 +19,29 @@ class PageController extends Zend_Controller_Action {
     	$this->view->form = $form;
 
 
-		// Validation and insert into database
-		// Is the request a POST?
-    	if ($this->getRequest()->isPost()) {
-            // Extract form data from POST
-    		$form_data = $this->getRequest()->getPost();
+        // Validation and insert into database
+        // Is the request a POST?
+        if ($this->getRequest()->isPost()) {
+        // Extract form data from POST
+            $form_data = $this->getRequest()->getPost();
             // Is the form valid according to criterias set in form?
-    		if ($form->isValid($form_data)) {
-            	// Helper functions
-    			$helper = new zCoreHelper();
-    			// Loads values from form
-    			$values = $form->getValues();
+            if ($form->isValid($form_data)) {
+                // Helper functions
+                $helper = new zCoreHelper();
+                // Loads values from form
+                $values = $form->getValues();
 
-				// Database
-    			$db = new zCoreDBPages();
-    			// Creates page
-    			$result = $db->createPage($values['pageName'], $helper->getUserData('organisationId'), $values['pageTypeSelect']);
+                // Database
+                $db = new zCoreDBPages();
+                // Creates page
+                $result = $db->createPage($values['pageName'], $helper->getUserData('organisationId'), $values['pageTypeSelect']);
 
-            	//Zend_Debug::dump($params);
-				//Zend_Debug::dump($values);
-				Zend_Debug::dump($result);
+                //Zend_Debug::dump($params);
+                //Zend_Debug::dump($values);
+                Zend_Debug::dump($result);
 
-    		}
-		}
+            }
+        }
     }
 
     public function editpagecontentAction()
@@ -63,45 +63,92 @@ class PageController extends Zend_Controller_Action {
 
         // Is the form posted back?
         if ($this->getRequest()->isPost()) {
-        	// Get all data from form
-        	$form_data = $this->getRequest()->getPost();
+            // Get all data from form
+            $form_data = $this->getRequest()->getPost();
 
-        	// Does the form validates according to specified criterias?
-        	if ($form->isValid($form_data)) {
-        		// Gets Helper instance
-        		$helper = new zCoreHelper();
-        		// Gets database Instance
-				$db = new zCoreDbPages();
+            // Does the form validates according to specified criterias?
+            if ($form->isValid($form_data)) {
+                // Gets Helper instance
+                $helper = new zCoreHelper();
+                // Gets database Instance
+                $db = new zCoreDbPages();
 
-				// Loads form values
-				$values = $form->getValues();
+                // Loads form values
+                $values = $form->getValues();
 
-				$result = $db->insertPageContent(mysql_real_escape_string(nl2br($values['pageContent'])), $values['pageId']);
+                $result = $db->insertPageContent(mysql_real_escape_string(nl2br($values['pageContent'])), $values['pageId']);
             }
         }
     }
 
     public function showpageAction()
     {
+        /**
     	// Default page ID
     	$pid = 2;
-		// Gets Helper instance
-  		$helper = new zCoreHelper();
+        // Gets Helper instance
+        $helper = new zCoreHelper();
 
-  		// Loading data Model
-  		$pageModel = new Application_Model_Mapper_Pages();
-  		// Get data from model
-  		$data = $pageModel->getPageData($pid);
-  		// Assigning data
-  		$this->view->pageName = $data->pageName;
-  		$this->view->pageType = $data->pageType;
-  		$this->view->pageAuthor = $data->pageAuthor;
-  		$this->view->pageUpdated = $data->pageUpdated;
+        // Loading data Model
+        $pageModel = new Application_Model_Mapper_Pages();
+        // Get data from model
+        $data = $pageModel->getPageData($pid);
+        // Assigning data
+        $this->view->pageName = $data->pageName;
+        $this->view->pageType = $data->pageType;
+        $this->view->pageAuthor = $data->pageAuthor;
+        $this->view->pageUpdated = $data->pageUpdated;
 
-  		$this->view->pageContent = $data->pageContent;
-
+        $this->view->pageContent = $data->pageContent;
+        **/
+        
+        $this->view->params = $this->_request->getParams();
     }
 
+    public function enhederAction()
+    {
+        
+    }
+    
+    public function familiespejdAction()
+    {
+        
+    }
+    
+    public function baeverAction()
+    {
+        
+    }
+    
+    public function ulveAction()
+    {
+            
+    }
+    
+    public function juniorAction()
+    {
+        
+    }
+    
+    public function tropAction()
+    {
+        
+    }
+    
+    public function seniorAction()
+    {
+        
+    }
+    
+    public function roverAction()
+    {
+        
+    }
+    
+    public function billederAction()
+    {
+        
+    }
 }
 
 ?>
