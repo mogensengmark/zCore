@@ -107,7 +107,6 @@ class PageController extends Zend_Controller_Action {
 
     public function enhederAction()
     {
-        
     }
     
     public function familiespejdAction()
