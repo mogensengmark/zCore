@@ -1,8 +1,87 @@
 <?php
+    $controller = 'page';
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+    $links = array(
+        'familiespejd' => $this->url(array('controller' => $controller, 'action' => 'familiespejd')),
+        'baever' => $this->url(array('controller' => $controller, 'action' => 'baever')),
+        'ulve' => $this->url(array('controller' => $controller, 'action' => 'ulve')),
+        'junior' => $this->url(array('controller' => $controller, 'action' => 'junior')),
+        'trop' => $this->url(array('controller' => $controller, 'action' => 'trop')),
+        'senior' => $this->url(array('controller' => $controller, 'action' => 'senior')),
+        'rover' => $this->url(array('controller' => $controller, 'action' => 'rover'))
+    );
+
+
 ?>
-Enheder
+
+<div id="page" class="page">
+    <div class="headline lefted">
+        <p>
+            Her i Herlufmagle gruppe er vores spejdere inddelt i nedenstående enheder.<br />
+            Klik på enhedens logo for at læse mere om den pågældende enhed.
+        </p>
+        <div class="unit_list">
+            <a href="<?php echo $links['familiespejd']; ?>" title="Læs mere om Familiespejd"><img src="../../images/unit_logos/familiespejd_logo.png" /></a>
+            <p>
+                <span>Familiespejder</span><br />
+                Aldersgruppe: 3-5 år (før-skole børn).<br />
+                Mødetidspunkt: Søndage, ca en gang om måneden.<br />
+                Kontaktperson: Torben Stenstrup.
+            </p>
+        </div>
+        <div class="unit_list">
+            <a href="<?php echo $links['baever']; ?>" title="Læs mere om Bæverne"><img src="../../images/unit_logos/baever_logo.png" /></a>
+            <p>
+                <span>Bævere</span><br />
+                Aldersgruppe: 0. - 1. klasse.<br />
+                Mødetidspunkt: Tirsdage, 17.00 - 18.30.<br />
+                Kontaktperson: Vivi Engmark.
+            </p>
+        </div>
+        <div class="unit_list">
+            <a href="<?php echo $links['ulve']; ?>" title="Læs mere om Ulvene"><img src="../../images/unit_logos/ulv_logo.png" /></a>
+            <p>
+                <span>Ulve</span><br />
+                Aldersgruppe: 2. - 3. klasse.<br />
+                Mødetidspunkt: Tirsdage, 18.00 - 19.30.<br />
+                Kontaktperson: Mogens Engmark.
+            </p>
+        </div>
+        <div class="unit_list">
+            <a href="<?php echo $links['junior']; ?>" title="Læs mere om Juniorerne"><img src="../../images/unit_logos/junior_logo.png" /></a>
+            <p>
+                <span>Juniorer</span><br />
+                Aldersgruppe: 4. - 5. klasse.<br />
+                Mødetidspunkt: Onsdage, 18.00 - 20.00.<br />
+                Kontaktperson: Helen Holm.
+            </p>
+        </div>
+        <div class="unit_list">
+            <a href="<?php echo $links['trop']; ?>" title="Læs mere om Troppen"><img src="../../images/unit_logos/spejder_logo.png" /></a>
+            <p>
+                <span>Trop</span><br />
+                Aldersgruppe: 6. - 7. klasse.<br />
+                Mødetidspunkt: Torsdage, 19.00 - 21.00.<br />
+                Kontaktperson: Dennis Kondrup.
+            </p>
+        </div>
+        <div class="unit_list">
+            <a href="<?php echo $links['senior']; ?>" title="Læs mere om Seniorerne"><img src="../../images/unit_logos/senior_logo.png" /></a>
+            <p>
+                <span>Seniorer</span><br />
+                Aldersgruppe: 8. klasse - 17 år.<br />
+                Mødetidspunkt: Endnu ikke fastlagt<br />
+                Kontaktperson: Allan Bennermann.
+            </p>
+        </div>
+        <div class="unit_list">
+            <a href="<?php echo $links['rover']; ?>" title="Læs mere om Roverne"><img src="../../images/unit_logos/rover_logo.png" /></a>
+            <p>
+                <span>Rovere</span><br />
+                Aldersgruppe: 18 år + <br />
+                Mødetidspunkt: Efter program<br />
+                Kontaktperson: Dennis Kondrup.
+            </p>
+        </div>
+    </div>
+</div>
