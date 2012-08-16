@@ -1,0 +1,54 @@
+/**
+ * CSS FOR STYLING UNIT PAGES
+ */
+
+.unit_list
+{
+    margin-left: 5px; 
+    padding-bottom: 10px;
+}
+
+.unit_list span
+{
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.unit_list_logo
+{
+    height: 75px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+/** Need to make a fix for the table settings untill 1140 css grid is implemeted **/
+
+/** Size **/
+.unit_list table
+{
+    width: 500px;
+}
+
+/** Remove blueprint css background colors **/
+.unit_list thead th
+{
+    background: #fff;
+}
+
+.unit_list tbody tr:nth-child(even) td, tbody tr.even td 
+{
+    background: #fff;
+}
+
+.unit_list th, td, caption
+{
+    margin: 0px;
+    padding: 1px 5px 1px 0px;
+}
+
+/** fixing width of first column **/
+.unit_list .col
+{
+    width: 50px;
+}
