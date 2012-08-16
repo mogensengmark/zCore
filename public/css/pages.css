@@ -52,21 +52,10 @@
 	clear: both;
 }
 
-.unit_list
+.icon16
 {
-    margin-left: 5px; 
-    padding-bottom: 10px;
-}
-
-.unit_list span
-{
-    font-size: 120%;
-    font-weight: bold;
-}
-
-.unit_list img
-{
-    height: 75px;
-    float: left;
-    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    margin-bottom: -3px;
+    margin-right: 5px;
 }
