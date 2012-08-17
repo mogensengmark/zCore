@@ -3,30 +3,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
   <title>topspejder.dk</title>
   <?php
     //-------------------------------------
     // Stylesheets
     //-------------------------------------
-    $this->headLink()->appendStylesheet('/css/screen.css', 'screen, projection');  
-    $this->headLink()->appendStylesheet('/css/ie.css', 'screen, projection', 'IE');
-    $this->headLink()->appendStylesheet('/css/print.css', 'print');
+    $this->headLink()->appendStylesheet('/css/1140.css');
     $this->headLink()->appendStylesheet('/css/sticky_footer.css');
     $this->headLink()->appendStylesheet('/css/menu.css');
     $this->headLink()->appendStylesheet('/css/design.css');
-    
-    /*
-    $this->headLink()->appendStylesheet('/css/dropdown/dropdown.vertical.css');
-    $this->headLink()->appendStylesheet('/css/dropdown/themes/default/default.css');
-    */
-    
-    
-    
-    //jQueryMenu
-    //$this->headlink()->appendStylesheet('/jquerymenu/jquery-ui-1.8.6.custom.css');
-    //$this->headlink()->appendStylesheet('/jquerymenu/jquery.ui.potato.menu.css');
-    $this->headlink()->appendStylesheet('/css/jquery-ui-1.8.6.custom.css');
-    //$this->headlink()->appendStylesheet('/css/jquery.ui.potato.menu.css');
 
     //-------------------------------------
     // Javascripts
@@ -35,10 +21,9 @@
     // jQueryMenu
     $this->headScript()->appendFile('/js/jquery-1.7.1.min.js');
     $this->headScript()->appendFile('/js/jquery-ui-1.8.18.custom.min.js');
-    //$this->headScript()->appendFile('/jquerymenu/jquery-1.4.4.min.js');
-    //$this->headScript()->appendFile('/jquerymenu/jquery-ui-1.8.6.custom.min.js');
-    // jQueryMenu
-    //$this->headScript()->appendFile('/js/jquery.ui.potato.menu.js');
+    // Media queries
+    $this->headScript()->appendFile('/js/css3-mediaqueries.js');
+
 
   ?>
 	<script type="text/javascript">
