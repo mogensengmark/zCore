@@ -26,16 +26,16 @@
 
 
   ?>
-	<script type="text/javascript">
-    window.onload = function()
-    {
-        //CKEDITOR.replace('Full');
-        CKEDITOR.replace('pageContent',
-                {
-            		toolbar: 'Minimum'
-                });
-    };
-</script>
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            //CKEDITOR.replace('Full');
+            CKEDITOR.replace('pageContent',
+            {
+                toolbar: 'Minimum'
+            });
+        };
+    </script>
   <?php
     echo $this->headlink();
     echo $this->headScript();
@@ -58,42 +58,45 @@
 <![endif]-->
 </head>
 <body>
-	<div id="wrap">
-		<div id="main" class="container">
-			<div id="top" class="top span-24 last"></div>
-			<div id="header" class="header span-24 last"></div>
-			<nav id="menu" class="navigation span-24 last"> 
-				<?php 
-                                    //echo $this->navigation()->menu()->setUlClass('cssmenu'); 
-                                    echo $this->navigation()->menu()->setUlClass(''); 
-                                ?>
-			</nav>
-			<?php
-				// CHECK IF WE ARE TO DISPLAY RIGHT COLUMN
-				if(!empty($this->layout()->display_right))
-				{
-					echo "display right";
-			?>
-			<div id="content" class="content span-20 last">
-				<div id="breadcrumb" class="breadcrumb span-20 last"></div>
-				<?php echo $this->layout()->content; ?>
-			</div>
-			<div id="content_right" class="content_right span-4 last">
-				<?php echo $this->layout()->content_right; ?>
-			</div>
-			<?php
-				} else {
-			?>
-			<div id="content" class="content span-24 last">
-				<?php echo $this->layout()->content; ?>
-			</div>
-			<?php
-				}
-			?>
-		</div>
-	</div>
-	<div id="footer" class="container">
-		<div id="footer_item" class="footer span-24 last">KFUM-Spejderne, Herlufmagle Gruppe, Sletskovvej 5, 4160 Herlufmagle</div>
-	</div>
+    <div id="wrap">
+        <div id="main" class="container">
+            <div id="top" class="top row last"></div>
+            <div id="header" class="header row"></div>
+            <nav id="menu" class="navigation row"> 
+            <?php 
+                echo $this->navigation()->menu()->setUlClass(''); 
+            ?>
+            </nav>
+            <?php
+            // CHECK IF WE ARE TO DISPLAY RIGHT COLUMN
+            if(!empty($this->layout()->display_right))
+            {
+                echo "display right";
+            ?>
+            <div id="content" class="content span-20 last">
+                <div id="breadcrumb" class="breadcrumb span-20 last"></div>
+                    <?php echo $this->layout()->content; ?>
+                </div>
+                <div id="content_right" class="content_right span-4 last">
+                    <?php echo $this->layout()->content_right; ?>
+                </div>
+            <?php
+    
+            } else {
+            
+            ?>
+            <div id="content" class="content span-24 last">
+                <?php echo $this->layout()->content; ?>
+            </div>
+            <?php
+            
+            }
+            
+            ?>
+        </div>
+    </div>
+    <div id="footer" class="container">
+        <div id="footer_item" class="footer span-24 last">KFUM-Spejderne, Herlufmagle Gruppe, Sletskovvej 5, 4160 Herlufmagle</div>
+    </div>
 </body>
 </html>
