@@ -11,8 +11,8 @@
     //-------------------------------------
     $this->headLink()->appendStylesheet('/css/1140.css');
     $this->headLink()->appendStylesheet('/css/sticky_footer.css');
-    $this->headLink()->appendStylesheet('/css/menu.css');
     $this->headLink()->appendStylesheet('/css/design.css');
+    $this->headLink()->appendStylesheet('/css/jquery-ui-1.8.6.custom.css');
 
     //-------------------------------------
     // Javascripts
@@ -51,18 +51,14 @@
 	})(jQuery);
 
 </script>
-<!--[if !IE 7]>
-	<style type="text/css">
-		#wrap {display:table;height:100%}
-	</style>
-<![endif]-->
+<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
 </head>
 <body>
     <div id="wrap">
         <div id="main" class="container">
             <div id="top" class="top row last"></div>
             <div id="header" class="header row"></div>
-            <nav id="menu" class="navigation row"> 
+            <nav id="menu" class="navigation"> 
             <?php 
                 echo $this->navigation()->menu()->setUlClass(''); 
             ?>
