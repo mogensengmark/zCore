@@ -10,6 +10,86 @@
         'senior' => $this->url(array('controller' => $controller, 'action' => 'senior')),
         'rover' => $this->url(array('controller' => $controller, 'action' => 'rover'))
     );
+    
+    $units = array(
+        array(
+            'unitLogo' => "familiespejd_logo.png", 
+            'unitName' => "Familiespejd", 
+            'unitGroup' => "3-5 år (før-skole børn).", 
+            'unitSchedule' => "Søndage, ca en gang om måneden.", 
+            'unitContactName' => "Torben Stenstrup", 
+            'unitContactPhone' => "3034 4620", 
+            'unitContactEmail' => "torben@topspejder.dk",
+            'unitPageLink' => $this->url(array('controller' => $controller, 'action' => 'familiespejd')),
+            'unitPageTitle' => "Læs mere om Familiespejd"
+        ),
+        array(
+            'unitLogo' => "baever_logo.png", 
+            'unitName' => "Bævere", 
+            'unitGroup' => "0. - 1. klasse.", 
+            'unitSchedule' => "Tirsdage, 17.00 til 18.30.", 
+            'unitContactName' => "Vivi Engmark", 
+            'unitContactPhone' => "2491 1710", 
+            'unitContactEmail' => "vivi@topspejder.dk",
+            'unitPageLink' => $this->url(array('controller' => $controller, 'action' => 'baever')),
+            'unitPageTitle' => "Læs mere om Bæverne"
+        ),
+        array(
+            'unitLogo' => "ulv_logo.png", 
+            'unitName' => "Ulve", 
+            'unitGroup' => "2. - 3. klasse.", 
+            'unitSchedule' => "Tirsdage, 18.00 til 19.30.", 
+            'unitContactName' => "Mogens Engmark", 
+            'unitContactPhone' => "6170 0856", 
+            'unitContactEmail' => "mogens@topspejder.dk",
+            'unitPageLink' => $this->url(array('controller' => $controller, 'action' => 'ulve')),
+            'unitPageTitle' => "Læs mere om Ulvene"
+        ),
+        array(
+            'unitLogo' => "junior_logo.png", 
+            'unitName' => "Juniorspejdere", 
+            'unitGroup' => "4. - 5. klasse.", 
+            'unitSchedule' => "Onsdage, 18.00 til 20.00.", 
+            'unitContactName' => "Helen Holm", 
+            'unitContactPhone' => "2089 5532", 
+            'unitContactEmail' => "helen@topspejder.dk",
+            'unitPageLink' => $this->url(array('controller' => $controller, 'action' => 'junior')),
+            'unitPageTitle' => "Læs mere om Juniorspejderne"
+        ),
+        array(
+            'unitLogo' => "spejder_logo.png", 
+            'unitName' => "Tropspejdere (Claus Daa)", 
+            'unitGroup' => "6. - 7. klasse.", 
+            'unitSchedule' => "Torsdage, 18.00 til 20.00.", 
+            'unitContactName' => "Dennis Kondrup", 
+            'unitContactPhone' => "4152 7270", 
+            'unitContactEmail' => "dennis@topspejder.dk",
+            'unitPageLink' => $this->url(array('controller' => $controller, 'action' => 'trop')),
+            'unitPageTitle' => "Læs mere om Troppen"
+        ),
+        array(
+            'unitLogo' => "senior_logo.png", 
+            'unitName' => "Seniorspejdere", 
+            'unitGroup' => "8. klasse til 17 år.", 
+            'unitSchedule' => "Endnu ikke fastsat", 
+            'unitContactName' => "Allan Bennermann", 
+            'unitContactPhone' => "2020 2814", 
+            'unitContactEmail' => "allan@topspejder.dk",
+            'unitPageLink' => $this->url(array('controller' => $controller, 'action' => 'senior')),
+            'unitPageTitle' => "Læs mere om Seniorerne"
+        ),
+        array(
+            'unitLogo' => "rover_logo.png", 
+            'unitName' => "Rovere (Klan Valodia)", 
+            'unitGroup' => "18 år +", 
+            'unitSchedule' => "Efter program.", 
+            'unitContactName' => "Dennis Kondrup", 
+            'unitContactPhone' => "4152 7270", 
+            'unitContactEmail' => "dennis@topspejder.dk",
+            'unitPageLink' => $this->url(array('controller' => $controller, 'action' => 'rover')),
+            'unitPageTitle' => "Læs mere om Roverne"
+        )
+    );
 
 
 ?>
@@ -20,201 +100,40 @@
             Her i Herlufmagle gruppe er vores spejdere inddelt i nedenstående enheder.<br />
             Klik på enhedens logo for at læse mere om den pågældende enhed.
         </p>
+<?php
+    foreach($units as $unit) {
+?>        
         <div class="unit_list">
-            <a href="<?php echo $links['familiespejd']; ?>" title="Læs mere om Familiespejd"><img src="../../images/unit_logos/familiespejd_logo.png" class="unit_list_logo" /></a>
+            <a href="<?php echo $unit['unitPageLink']; ?>" title="<?php echo $unit['unitPageTitle'] ?>"><img src="../../images/unit_logos/<?php echo $unit['unitLogo'] ?>" class="unit_list_logo" /></a>
             <table class="unit_details">
                 <thead>
-                    <th colspan="2">Familiespejder</th>
+                    <th colspan="2"><?php echo $unit['unitName'] ?></th>
                 </thead>
                 <tr>
                     <td class="col">Aldersgruppe:</td>
-                    <td>3-5 år (før-skole børn).</td>
+                    <td><?php echo $unit['unitGroup'] ?></td>
                 </tr>
                 <tr>
                     <td>Mødetider:</td>
-                    <td>Søndage, ca en gang om måneden.</td>
+                    <td><?php echo $unit['unitSchedule'] ?></td>
                 </tr>
                 <tr>
                     <td>Kontaktperson:</td>
-                    <td>Torben Stenstrup</td>
+                    <td><?php echo $unit['unitContactName'] ?></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/>3034 4620</td>
+                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/><?php echo $unit['unitContactPhone'] ?></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><img src="../../images/icons/16x16/email.png" class="icon16" />torben@topspejder.dk</td>
+                    <td><img src="../../images/icons/16x16/email.png" class="icon16" /><?php echo $unit['unitContactEmail'] ?></td>
                 </tr>
             </table>
         </div>
-        <div class="unit_list">
-            <a href="<?php echo $links['baever']; ?>" title="Læs mere om Bæverne"><img src="../../images/unit_logos/baever_logo.png" class="unit_list_logo" /></a>
-            <table class="unit_details">
-                <thead>
-                    <th colspan="2">Bævere</th>
-                </thead>
-                <tr>
-                    <td class="col">Aldersgruppe:</td>
-                    <td>0. - 1. klasse.</td>
-                </tr>
-                <tr>
-                    <td>Mødetider:</td>
-                    <td>Tirsdage, 17.00 til 18.30.</td>
-                </tr>
-                <tr>
-                    <td>Kontaktperson:</td>
-                    <td>Vivi Engmark</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/>2491 1710</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/email.png" class="icon16" />vivi@topspejder.dk</td>
-                </tr>
-            </table>
-        </div>
-        <div class="unit_list">
-            <a href="<?php echo $links['ulve']; ?>" title="Læs mere om Ulvene"><img src="../../images/unit_logos/ulv_logo.png" class="unit_list_logo" /></a>
-            <table class="unit_details">
-                <thead>
-                    <th colspan="2">Ulve</th>
-                </thead>
-                <tr>
-                    <td class="col">Aldersgruppe:</td>
-                    <td>2. - 3. klasse,</td>
-                </tr>
-                <tr>
-                    <td>Mødetider:</td>
-                    <td>Tirsdage, 18.00 til 19.30.</td>
-                </tr>
-                <tr>
-                    <td>Kontaktperson:</td>
-                    <td>Mogens Engmark</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/>6170 0856</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/email.png" class="icon16" />mogens@topspejder.dk</td>
-                </tr>
-            </table>
-        </div>
-        <div class="unit_list">
-            <a href="<?php echo $links['junior']; ?>" title="Læs mere om Juniorerne"><img src="../../images/unit_logos/junior_logo.png" class="unit_list_logo" /></a>
-            <table class="unit_details">
-                <thead>
-                    <th colspan="2">Juniorspejdere</th>
-                </thead>
-                <tr>
-                    <td class="col">Aldersgruppe:</td>
-                    <td>4. - 5. klasse.</td>
-                </tr>
-                <tr>
-                    <td>Mødetider:</td>
-                    <td>Onsdage, 18.00 til 20.00.</td>
-                </tr>
-                <tr>
-                    <td>Kontaktperson:</td>
-                    <td>Helen Holm</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/>2089 5532</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/email.png" class="icon16" />helen@topspejder.dk</td>
-                </tr>
-            </table>
-        </div>
-        <div class="unit_list">
-            <a href="<?php echo $links['trop']; ?>" title="Læs mere om Troppen"><img src="../../images/unit_logos/spejder_logo.png" class="unit_list_logo" /></a>
-            <table class="unit_details">
-                <thead>
-                    <th colspan="2">Troppen (Claus Daa)</th>
-                </thead>
-                <tr>
-                    <td class="col">Aldersgruppe:</td>
-                    <td>6. - 7. klasse.</td>
-                </tr>
-                <tr>
-                    <td>Mødetider:</td>
-                    <td>Torsdage 19.00 til 21.00</td>
-                </tr>
-                <tr>
-                    <td>Kontaktperson:</td>
-                    <td>Dennis Kondrup</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/>4152 7270</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/email.png" class="icon16" />dennis@topspejder.dk</td>
-                </tr>
-            </table>
-        </div>
-        <div class="unit_list">
-            <a href="<?php echo $links['senior']; ?>" title="Læs mere om Seniorerne"><img src="../../images/unit_logos/senior_logo.png" class="unit_list_logo" /></a>
-                        <table class="unit_details">
-                <thead>
-                    <th colspan="2">Seniorspejdere</th>
-                </thead>
-                <tr>
-                    <td class="col">Aldersgruppe:</td>
-                    <td>8. - 17 år.</td>
-                </tr>
-                <tr>
-                    <td>Mødetider:</td>
-                    <td>Endnu ikke fastlagt</td>
-                </tr>
-                <tr>
-                    <td>Kontaktperson:</td>
-                    <td>Allan Bennermann</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/>2020 2814</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/email.png" class="icon16" />allan@topspejder.dk</td>
-                </tr>
-            </table>
-        </div>
-        <div class="unit_list">
-            <a href="<?php echo $links['rover']; ?>" title="Læs mere om Roverne"><img src="../../images/unit_logos/rover_logo.png" class="unit_list_logo" /></a>
-                        <table class="unit_details">
-                <thead>
-                    <th colspan="2">Rovere (Klan Valodia)</th>
-                </thead>
-                <tr>
-                    <td class="col">Aldersgruppe:</td>
-                    <td>18 år +</td>
-                </tr>
-                <tr>
-                    <td>Mødetider:</td>
-                    <td>Efter program</td>
-                </tr>
-                <tr>
-                    <td>Kontaktperson:</td>
-                    <td>Dennis Kondrup</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/>4152 7270</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="../../images/icons/16x16/email.png" class="icon16" />dennis@topspejder.dk</td>
-                </tr>
-            </table>
-        </div>
+<?php
+    }
+?>
+
     </div>
 </div>
