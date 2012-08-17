@@ -1,12 +1,8 @@
-/*
-@import url("dropdown/dropdown.vertical.css");
-@import url("dropdown/themes/default/default.css");
-*/
-/*@import url("menu.css");*/
+@import url("typography.css");
+@import url("forms.css");
 @import url("blogs.css");
 @import url("pages.css");
 @import url("units.css");
-/*@charset "utf-8";*/
 
 body
 {
@@ -18,7 +14,9 @@ body
 
 .container
 {
-	/** BLUEPRINT CSS **/
+	/** surpressing padding settings from 1140grid. **/
+        padding-left: 0px;
+        padding-right: 0px;
 }
 
 #wrap
