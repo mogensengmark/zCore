@@ -1,48 +1,110 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+/* Unit data
+ * 
  */
+$unit = array(
+            'unitLogo' => "unit_logos/familiespejder_farve_stor.png", 
+            'unitName' => "Familiespejd", 
+            'unitGroup' => "3-5 år (før-skole børn).", 
+            'unitSchedule' => "Søndage, ca en gang om måneden.", 
+            'unitContactName' => "Torben Stenstrup", 
+            'unitContactPhone' => "3034 4620", 
+            'unitContactEmail' => "torben@topspejder.dk",
+            'unitPageTitle' => "Læs mere om Familiespejd",
+            'unitAssistants' => array('Helen Holm', 'Anne-Mette Nielsen', 'Camilla Crone')
+        )
 ?>
 
 <div id="page" class="page">
-    <div id="unitDescriptionHeader">
-        <img class="unitDetailsLogo" src="../../images/unit_logos/familiespejder_farve_stor.png">
-        <h1>Familiespejd</h1>
+    <div id="unitDescriptionHeader" class="row">
+        <div id="unitDecstriptionHeaderLogo" class="twocol">
+            <img class="unitDetailsLogo" src="../../images/<?php echo $unit['unitLogo']; ?>">
+        </div>
+        <div id="unitDescriptionHeaderText" class="tencol last">
+            <h2><?php echo $unit['unitName'] ?></h2>
+            <table class="unit_details">
+                <tr>
+                    <td class="col">Aldersgruppe:</td>
+                    <td><?php echo $unit['unitGroup'] ?></td>
+                </tr>
+                <tr>
+                    <td>Mødetider:</td>
+                    <td><?php echo $unit['unitSchedule'] ?></td>
+                </tr>
+                <tr>
+                    <td>Enhedsleder:</td>
+                    <td><?php echo $unit['unitContactName'] ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><img src="../../images/icons/16x16/phone.png" class="icon16"/><?php echo $unit['unitContactPhone'] ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><img src="../../images/icons/16x16/email.png" class="icon16" /><?php echo $unit['unitContactEmail'] ?></td>
+                </tr>
+<?php
+    
+    if(!empty($unit['unitAssistants'])) {
+        $assistantCount = count($unit['unitAssistants']);
+        $firstRun = '';
+
+        foreach($unit['unitAssistants'] as $assistant) {
+?>
+                <tr>
+                    <td>
+                    <?php 
+                        if(empty($firstRun)) {
+                            echo "Assistent(er)";
+                            $firstRun = 1;
+                        }
+                    ?>
+                    </td>
+            
+                    <td><?php echo $assistant; ?></td>
+                </tr>
+<?php                
+        }            
+    }
+?>
+            </table>        
+        </div>
     </div>
+    <div id="unitDescriptionMain" class="eightcol">
+        Hvad er FamilieSpejd? 
 
-Hvad er FamilieSpejd? 
+        Vi er en stribe børnefamilier der mødes cirka en søndag 
+        hver måned for at lave sjove aktiviteter fra kl. 10 til 13.
 
-Vi er en stribe børnefamilier der mødes cirka en søndag 
-hver måned for at lave sjove aktiviteter fra kl. 10 til 13.
+        Aktiviteterne retter sig mod familiens 3-5 årige børn og 
+        forældre samt søskende. De 3-5 årige meldes ind i 
+        spejdergruppen og betaler 250 kr. pr. kvartal i kontingent. 
+        Barnets kontingentbetaling dækker også for forældre og 
+        søskende (som ikke er spejdere).
 
-Aktiviteterne retter sig mod familiens 3-5 årige børn og 
-forældre samt søskende. De 3-5 årige meldes ind i 
-spejdergruppen og betaler 250 kr. pr. kvartal i kontingent. 
-Barnets kontingentbetaling dækker også for forældre og 
-søskende (som ikke er spejdere).
+        Vi holder til på spejdergrunden på Sletskovvej 5 og vi er 
+        udendørs, så husk altid påklædning efter vejret.
 
-Vi holder til på spejdergrunden på Sletskovvej 5 og vi er 
-udendørs, så husk altid påklædning efter vejret.
+        Vi bruger bålet som ramme for vores fællesskab og laver 
+        tit lidt lækkert på bålet (pandekager, frugt, brød, pizza og
+        endda røgede sild). Vores aktiviteter handler om natur, 
+        friluftsliv og lege. Vi hedder Rumpenisserne og har det
+        sjovt i skoven ligesom Ronja Røverdatter – vi har også en 
+        Rumpenissesang, vi synger hver gang vi er samlet.
 
-Vi bruger bålet som ramme for vores fællesskab og laver 
-tit lidt lækkert på bålet (pandekager, frugt, brød, pizza og
-endda røgede sild). Vores aktiviteter handler om natur, 
-friluftsliv og lege. Vi hedder Rumpenisserne og har det
-sjovt i skoven ligesom Ronja Røverdatter – vi har også en 
-Rumpenissesang, vi synger hver gang vi er samlet.
+        Har du spørgsmål er du velkommen til at kontakte Torben
+        Stenstrup på tlf. 30344620 eller mail: torben@topspejder.dk. 
 
-Har du spørgsmål er du velkommen til at kontakte Torben
-Stenstrup på tlf. 30344620 eller mail: torben@topspejder.dk. 
+        Der er ingen tilmelding – bare mød op.
 
-Der er ingen tilmelding – bare mød op.
+        Torben Stentrop
+        Helen Holm
 
-Torben Stentrop
-Helen Holm
-
-Anne-Mette Nielsen
-Camilla Crone
-
-
+        Anne-Mette Nielsen
+        Camilla Crone
+    </div>
+    <div id="unitDescriptionCalendar" class="fourcol last">
+        blobl
+    </div>
 </div>
