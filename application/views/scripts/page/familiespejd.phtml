@@ -13,7 +13,29 @@ $unit = array(
             'unitContactEmail' => "torben@topspejder.dk",
             'unitPageTitle' => "Læs mere om Familiespejd",
             'unitAssistants' => array('Helen Holm', 'Anne-Mette Nielsen', 'Camilla Crone')
+        );
+        
+$calendar = array(
+    array(
+        'date' => '8. sept. 2012',
+        'time' => '16.00 - 00.00',
+        'location' => 'Ravnstrup Sø',
+        'description' => 'FamilieSpejdernes første overnatningstur.'
+        ),
+    array(
+        'date' => '9. sept. 2012',
+        'time' => '10.00 - 13.00',
+        'location' => 'Ravnstrup Sø',
+        'description' => 'Insektjagt i fuglereservatet og frokost over bål.'
+        ),
+    array(
+        'date' => '7. okt. 2012',
+        'time' => '10.00 - 13.00',
+        'location' => 'Ravnstrup Sø',
+        'description' => 'Vi skal lave en Rumpenisse maskot og pandekager på bålet.'
         )
+
+);
 ?>
 
 <div id="page" class="page">
@@ -71,40 +93,48 @@ $unit = array(
             </table>        
         </div>
     </div>
-    <div id="unitDescriptionMain" class="eightcol">
-        Hvad er FamilieSpejd? 
+    <div id="unitDescriptionMain" class="row">
+        <div id="unitDescriptionMain" class="ninecol">
+            <h3>Hvad er FamilieSpejd?</h3>
+            <p>
+                Vi er en stribe børnefamilier, der mødes cirka en søndag hver måned for at lave sjove aktiviteter fra kl. 10 til 13. Aktiviteterne retter sig mod familiens 3-5 årige børn og forældre samt søskende.<br />De 3-5 årige meldes ind i spejdergruppen og betaler 250 kr. pr. kvartal i kontingent. Barnets kontingentbetaling dækker også for forældre og søskende (som ikke er spejdere).
+            </p>
 
-        Vi er en stribe børnefamilier der mødes cirka en søndag 
-        hver måned for at lave sjove aktiviteter fra kl. 10 til 13.
+            Vi holder til på spejdergrunden på Sletskovvej 5 og vi er 
+            udendørs, så husk altid påklædning efter vejret.
 
-        Aktiviteterne retter sig mod familiens 3-5 årige børn og 
-        forældre samt søskende. De 3-5 årige meldes ind i 
-        spejdergruppen og betaler 250 kr. pr. kvartal i kontingent. 
-        Barnets kontingentbetaling dækker også for forældre og 
-        søskende (som ikke er spejdere).
+            Vi bruger bålet som ramme for vores fællesskab og laver 
+            tit lidt lækkert på bålet (pandekager, frugt, brød, pizza og
+            endda røgede sild). Vores aktiviteter handler om natur, 
+            friluftsliv og lege. Vi hedder Rumpenisserne og har det
+            sjovt i skoven ligesom Ronja Røverdatter – vi har også en 
+            Rumpenissesang, vi synger hver gang vi er samlet.
 
-        Vi holder til på spejdergrunden på Sletskovvej 5 og vi er 
-        udendørs, så husk altid påklædning efter vejret.
+            Har du spørgsmål er du velkommen til at kontakte Torben
+            Stenstrup på tlf. 30344620 eller mail: torben@topspejder.dk. 
 
-        Vi bruger bålet som ramme for vores fællesskab og laver 
-        tit lidt lækkert på bålet (pandekager, frugt, brød, pizza og
-        endda røgede sild). Vores aktiviteter handler om natur, 
-        friluftsliv og lege. Vi hedder Rumpenisserne og har det
-        sjovt i skoven ligesom Ronja Røverdatter – vi har også en 
-        Rumpenissesang, vi synger hver gang vi er samlet.
+            Der er ingen tilmelding – bare mød op.
 
-        Har du spørgsmål er du velkommen til at kontakte Torben
-        Stenstrup på tlf. 30344620 eller mail: torben@topspejder.dk. 
+            Torben Stentrop
+            Helen Holm
 
-        Der er ingen tilmelding – bare mød op.
-
-        Torben Stentrop
-        Helen Holm
-
-        Anne-Mette Nielsen
-        Camilla Crone
-    </div>
-    <div id="unitDescriptionCalendar" class="fourcol last">
-        blobl
+            Anne-Mette Nielsen
+            Camilla Crone
+        </div>
+        <!--<div class="onecol"></div>-->
+        <div id="unitDescriptionCalendar" class="threecol last">
+            <div class="calendarAgendaHeader"><h3>Aktivitetskalender</h3></div>
+<?php
+    foreach($calendar as $cal) {
+                
+?>
+            <div class="calendarAgendaItem">
+                <div class="calendarAgendaItemDateTime"><?php echo $cal['date'] . ' - ' . $cal['time'] ?> </div>
+                <div class="calendarAgendaItemDescription"><?php echo $cal['description'] ?></div>
+            </div>
+<?php
+    }
+?>
+        </div>
     </div>
 </div>
