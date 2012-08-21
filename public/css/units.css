@@ -21,39 +21,6 @@
     margin-right: 10px;
 }
 
-
-/** Need to make a fix for the table settings untill 1140 css grid is implemeted **/
-
-/** Size **/
-.unit_list table
-{
-    /*width: 500px;*/
-}
-
-/** Remove blueprint css background colors **/
-.unit_list thead th
-{
-    /*background: #fff;*/
-}
-
-/*
-.unit_list tbody tr:nth-child(even) td, tbody tr.even td 
-{
-    background: #fff;
-}
-
-.unit_list th, td, caption
-{
-    margin: 0px;
-    padding: 1px 5px 1px 0px;
-}
-*/
-/** fixing width of first column **/
-.unit_list .col
-{
-    width: 50px;
-}
-
 /**
     UNIT DESCRIPTION
 **/
@@ -63,4 +30,18 @@
     float: left;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+#unitDescriptionMain
+{
+    padding-top: 10px;
+    
+}
+
+/**
+    UNIT DESCRIPTION CALENDAR 
+**/
+.unitDescriptionCalendar
+{
+    
 }
