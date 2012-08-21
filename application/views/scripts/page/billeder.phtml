@@ -1,8 +1,78 @@
 <?php
+https://picasaweb.google.com/113933098347309535962/SusaIdrTsdag?authuser=0&authkey=Gv1sRgCLOs2IGag5bIdQ&feat=directlink
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+$galleries = array(
+    array(
+        'galleryName' => 'Spejdernes 2012',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/SpejdernesLejr2012?authuser=0&authkey=Gv1sRgCOjw-PuW45-nkgE&feat=directlink',
+        'galleryDescription' => 'Udvalgte højdepunkter fra Spejdernes Lejr 2012.'
+    ),
+    array(
+        'galleryName' => 'Ulvesommerlejr 2012',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/Ulvesommerlejr2012?authuser=0&authkey=Gv1sRgCOG0irn13L6-cQ&feat=directlink',
+        'galleryDescription' => 'Ulvenes sommerlejr i Bjerghytten ved Kværkeby.'
+    ),
+    array(
+        'galleryName' => 'Bæversommerlejr 2012',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/BVersommerlejr2012?authuser=0&authkey=Gv1sRgCISW5rOIzInh5gE&feat=directlink',
+        'galleryDescription' => 'Billeder fra sommerlejren på Stenvs Naturcenter, sammen med bæverne fra Glumsø.'
+    ),
+    array(
+        'galleryName' => 'Distriktsturnering for Bævere og Ulve, 2012',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/DistriktsturneringBVereOgUlve2012?authuser=0&authkey=Gv1sRgCNzmgYXnkJQL&feat=directlink',
+        'galleryDescription' => 'Årets distriktsturnering i Glumsø.'
+    ),
+    array(
+        'galleryName' => 'Distriktstur til Sverige 2011',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/DistriktTurTilSverige2011?authuser=0&authkey=Gv1sRgCJqf1J6Zz_-aBA&feat=directlink',
+        'galleryDescription' => ''
+    ),
+    array(
+        'galleryName' => 'Susaa Idrætsdag 2011',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/SusaIdrTsdag?authuser=0&authkey=Gv1sRgCLOs2IGag5bIdQ&feat=directlink',
+        'galleryDescription' => 'Sjov og spas fra Susaa Idrætsdag.'
+    ),
+    array(
+        'galleryName' => 'Oprykning 2011',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/Oprykning2011?authuser=0&authkey=Gv1sRgCNr73v_YhcHZTg&feat=directlink',
+        'galleryDescription' => 'Billeder fra vores oprykningsarrangement 2011.'
+    ),
+    array(
+        'galleryName' => 'Ulvelejr 2011 Farmen',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/Ulvelejr2011Farmen?authuser=0&authkey=Gv1sRgCI_c-aDeuKfvlwE&feat=directlink',
+        'galleryDescription' => 'Billeder fra sommerlejren 2011, som blev holdt sammen med Sct. Michael gruppe fra Slagelse.'
+    ),
+    array(
+        'galleryName' => 'Bæverlejr 25-6-2011',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/BVerlejr2562011?authuser=0&authkey=Gv1sRgCOC7qOvjt97wGg&feat=directlink',
+        'galleryDescription' => 'Bæverlejr i Havdrup.'
+    ),
+    array(
+        'galleryName' => 'Juniortur Næsbycenter 29-4-2011',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/JuniorturNSbycenter2942011?authuser=0&authkey=Gv1sRgCMG3ysr2zb6k9QE&feat=directlink',
+        'galleryDescription' => 'Juniorweekend 2011.'
+    ),
+    array(
+        'galleryName' => 'Distriktsturnering for Bævere og Ulve, 2011',
+        'galleryLink' => 'https://picasaweb.google.com/113933098347309535962/DistriktTurneringBVerOgUlveIHNg242011?authuser=0&authkey=Gv1sRgCJvMuajO3sLf9wE&feat=directlink',
+        'galleryDescription' => 'Billeder fra distriktsturneringen i Høng.'
+    )
+);
+
 ?>
-Der er en oversigt over vores billed-gallerier på vej hertil.
+<div id="page" class="page">
+    <div id="galleriesHeader" class="row">
+        <h3>Her er vores billedarkiver.</h3>
+    </div>
+
+<?php
+    foreach($galleries as $gallery) {
+?>
+    <div class="galleriesListItem row"> 
+        <a href="<?php echo $gallery['galleryLink'] ?>" target="_blank"><?php echo $gallery['galleryName'] ?></a><br />
+        <?php echo $gallery['galleryDescription'] ?>
+    </div>
+<?php    
+    }
+?>
+</div>
