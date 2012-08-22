@@ -111,7 +111,58 @@ class PageController extends Zend_Controller_Action {
     
     public function familiespejdAction()
     {
+        /**
+        // Enter your Google account credentials
+        $email = 'mogens.engmark@gmail.com';
+        $passwd = 'fdm2009!!';
+        try {
+            $client = Zend_Gdata_ClientLogin::getHttpClient($email, $passwd, 'cl');
+        } catch (Zend_Gdata_App_CaptchaRequiredException $cre) {
+            echo 'URL of CAPTCHA image: ' . $cre->getCaptchaUrl() . "\n";
+            echo 'Token ID: ' . $cre->getCaptchaToken() . "\n";
+        } catch (Zend_Gdata_App_AuthException $ae) {
+            echo 'Problem authenticating: ' . $ae->exception() . "\n";
+        }
+
+        $cal = new Zend_Gdata_Calendar($client);
+        **/
         
+        /**
+         * @todo: setup query string to google account.
+         * use $calendar->id value for retrieving values from a given calendar????
+         * 
+         */
+        
+        
+        
+        // Parameters for ClientAuth authentication
+        $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME;
+        $user = "mogens.engmark@gmail.com";
+        $pass = "fdm2009!!";
+
+        // Create an authenticated HTTP client
+        $client = Zend_Gdata_ClientLogin::getHttpClient($user, $pass, $service);
+        
+        // Create an instance of the Calendar service
+        $service = new Zend_Gdata_Calendar($client);        
+        /*
+        try {
+            $listFeed= $service->getCalendarListFeed();
+            //$listFeed= $service->getCalendarEventFeed();
+        } catch (Zend_Gdata_App_Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        
+        //Zend_Debug::dump($listFeed);
+        echo "<h1>Calendar List Feed</h1>";
+        echo "<ul>";
+        foreach ($listFeed as $calendar) {
+            echo "<li>" . $calendar->title . " (Event Feed: " . $calendar->id . ") </li>";
+            //echo "<li>" . $calendar->title . " " . $calendar->when[0]->startTime  . " " . $calendar->author . ") </li>";
+        }
+        echo "</ul>";
+        */
+        //Zend_Debug::dump($calendar->when);
     }
     
     public function baeverAction()
