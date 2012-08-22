@@ -4,6 +4,7 @@
 @import url("blogs.css");
 @import url("pages.css");
 @import url("units.css");
+@import url("gallery.css");
 
 body
 {
@@ -20,6 +21,17 @@ body
         padding-right: 0px;
 }
 
+.vr
+{
+    /** vertical ruler column. Use together with 1140 grid calls onecol. **/
+    border: 1px solid;
+    height: 100px;
+    
+    background-image: url('../images/core/verticalRuler.png');
+    background-repeat: repeat-y;
+    background-position: center;
+    
+}
 #wrap
 {
 	margin: 0px auto;
@@ -62,6 +74,16 @@ body
 	/**border-left: 1px solid #00d;/**/
 }
 
+.fastTable th
+{
+    text-align: left;
+}
+
+.fastTable td
+{
+    /* Not sure if this one goes here*/
+    padding: 0px 15px 0px 2px;
+}
 
 #footer
 {
