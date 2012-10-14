@@ -74,6 +74,10 @@ width: 100%;
 float: left;
 }
 
+.vr {
+    border-right: 1px solid black;
+}
+
 .last {
 margin-right: 0px;
 }
